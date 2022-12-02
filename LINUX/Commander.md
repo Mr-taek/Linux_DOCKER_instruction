@@ -15,6 +15,7 @@
 
 [App설치시모든사용자가사용할수있게하기](#앱설치)
 
+[python라이브러리설치](#python)
 - 한글은  한글\ 게임\ 1.plplpl 처럼 \을 써줘야 인식하나봄. 근데 꼭 그런 것도 아닌가봄.
 - cd _: _은 경로, 경로를 이동한다
     - e.g
@@ -251,6 +252,7 @@
         - rm -i abc.txt : 삭제시 정말 삭제할지 메시지 뜸
         - rm -f abc.txt : 삭제 시 그냥 바로 삭제.
         - [주의사용]rm -rf abc : Recursive force , abc 디렉터리와 더불어 그 하위 폴더,파일까지 다 삭제.
+            - rm -rf abc , abc가 폴더면 그냥 하위까지 다 삭제됨
     5. cp : copy, 파일이나 폴더를 복사. 명령을 읽는 권한이 필요.
         - cd abc.txt cba.txt : abc.txt를 cba.txt라는 이름으로 복사
         - cp -r abc cba : 폴더복사, abc폴더를 cba이름으로 복사
@@ -606,3 +608,8 @@
 # 앱설치
 - For all user
     1. root에서 설치하면 됨
+# python
+- pip 설치
+    - python3 을 치고 버전을 한 번 확인하고
+    - apt-get install python3-pip 을 해서 설치 ㄱㄱ , python-pip 하면 2.~ 버전이 설치되니까 조심하셈
+    

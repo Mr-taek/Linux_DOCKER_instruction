@@ -1,7 +1,7 @@
 [윈도우에서-리눅스로_파일전송방법](#window_linuxfiletransfering)
 [관리자자동접속법](#Administrator)
 [가상머신IP확인및ip설정](#vm-machine)
-
+[tmux사용법](#tmux)
 
 # Window_LinuxFileTransfering
 - steps
@@ -31,6 +31,10 @@
             - 만약 is not regular file 이라고 뜨는 이유는 경로를 사용할 땐 -r 을 써주는 게 필수다 (위에 일부러 쓰지 않은 것은 내가 분명 까먹을 것이기 때문이다)
                 - pscp -r window경로 리눅등록user@HOSTIP:/home/리눅등록user/~ 을 해주면 끝난다
         2. pw 를 적으라하는데 리눅스에등록된사용자이름의 비밀번호를 적으면 된다
+
+        + 윈도우 경로의 끝이 폴더라면 폴더 그 자체가 복사가 된다
+        + 윈도우에서 보낼 파일의 이름이 kbs이고 window에 kbs라는 이름의 폴더가 " 있는 경로 " 에다가 해버리면 자동으로 덮어쓰기가 될까?
+            -  YES , 된다
 # Administrator
 - 방법
     1. sudo -i : 바로 관리자 root로 terminal 실행하는 방법
@@ -63,4 +67,24 @@
             - login as leekt
             - pw anna1234
         
-        
+# tmux
+- tmux : terminal multiplexer, 여러개 터미널을 각각 독립적으로 사용할 수 있게 하는 유틸리티
+    - 장점
+        1. 한 개 터미너렝서 화면을 분할해서 사용이 가능함
+        2. 영구적인 "session" 이라는 걸 제공해서 작업중 ssh서버와 연결이 끊겨도 작업중인 것이 사라지지 않음
+    - 구조
+        1. session : 
+    - 사용법
+        - session
+            1. tmux new -s 세션이름 , 새로운 세션 생성
+            2. tmux new -s 세션이름 -n 윈도우이름 , 세션 만들면서 윈도우랑 같이 생성
+            3. exit , 세션 종료
+            4. tmux ls , 현재 생성된 모든 세션 목록
+            5. tmux attach -t 세션번호 , 세션 다시 시작하기 불러오기
+            6. (ctrl+b) +d , 세션 중단하기 ? 
+        - window
+            1. (ctrl + b ) + c , 새 윈도우 생성
+            2. (ctrl + b ) + b + 숫자 , 숫자로 적힌 윈도우로 이동
+        1. tmux 타입
+        2. 하나의 새로운 윈도우를 가지는 새로운 세션을 만듦
+        3. 

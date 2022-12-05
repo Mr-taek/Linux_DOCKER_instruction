@@ -1,4 +1,7 @@
 [윈도우에서-리눅스로_파일전송방법](#window_linuxfiletransfering)
+
+[리눅스에서윈도우로파일전송방법](#linux_windowtransfering)
+
 [관리자자동접속법](#Administrator)
 [가상머신IP확인및ip설정](#vm-machine)
 [tmux사용법](#tmux)
@@ -35,6 +38,13 @@
         + 윈도우 경로의 끝이 폴더라면 폴더 그 자체가 복사가 된다
         + 윈도우에서 보낼 파일의 이름이 kbs이고 window에 kbs라는 이름의 폴더가 " 있는 경로 " 에다가 해버리면 자동으로 덮어쓰기가 될까?
             -  YES , 된다
+
+# linux_windowtransfering
+
+- On window cmd , (p)scp -P 16022 -r ubuntu@14.49.44.206:/home/ubuntu/VR_SICK_made_leekt/vr_sickness\Park_vr_sickness_predictor C:\Users\leekt\Desktop
+    - 윈도우 cmd에서 실행시 , 자신의 port와 ip를 알기 때문에 아주 손쉽게 옮길 수가 있다.
+
+
 # Administrator
 - 방법
     1. sudo -i : 바로 관리자 root로 terminal 실행하는 방법

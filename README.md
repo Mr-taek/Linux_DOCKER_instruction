@@ -28,6 +28,9 @@
         4. PUTTY에서 HOSTIP와 포트번호를 적고 SAVE
     2. 실행
         1. window - cmd , pscp ~ window경로 리눅스에등록된사용자이름@hostip:linux경로(/home/사용자이름)~ 적는다
+            - 참고사항
+                1. -r 을 할 시, 폴더를 복사한다는 의미임으로 폴더 내부 파일들만 복사되는 것이 아니니 걱정 안해도 된다
+            - e.g : pscp -P 포트번호 -r ~/folder username@ip:/home/username/folder
             - 만약 access denied 일시
                 1. 리눅스에등록된사용자이름이 정확리 Linux에 등록된 user 인 지 체크한다
                 1. Linux에서 /etc/ssh/sshd_config 에서 PermitRootLogin 옆에 prohibit-password을 yes로 바꾼다 (이 때 반드시 사용자는 root 사용 권한이 있어야 한다)
@@ -43,6 +46,7 @@
 
 - On window cmd , (p)scp -P 16022 -r ubuntu@14.49.44.206:/home/ubuntu/VR_SICK_made_leekt/vr_sickness\Park_vr_sickness_predictor C:\Users\leekt\Desktop
     - 윈도우 cmd에서 실행시 , 자신의 port와 ip를 알기 때문에 아주 손쉽게 옮길 수가 있다.
+    - 비밀번호 누를 때 한글과 영어를 신경쓰자, 비번은 이걸 구분하더라
 
 
 # Administrator

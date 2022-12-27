@@ -5,7 +5,7 @@
 [4. Network 지식](#4-network-지식--넷트워크-연결-오류-해결)
 [5. commander - 리눅스 제공 커맨더](#5-commander---리눅스-제공-커맨더)
 # 6. Server management and commander
-[사용자변경](#사용자-변경)
+[사용자변경_그룹변경(docker)](#사용자-변경)
 
 [관리자로변경](#관리자-변경)
 
@@ -252,6 +252,9 @@
         - rm -i abc.txt : 삭제시 정말 삭제할지 메시지 뜸
         - rm -f abc.txt : 삭제 시 그냥 바로 삭제.
         - [주의사용]rm -rf abc : Recursive force , abc 디렉터리와 더불어 그 하위 폴더,파일까지 다 삭제.
+        - [글깨진파일삭제] steps
+            1. 글깨진 파일|폴더가 있는 경로에서 ls -li , 맨 앞에 써져 있는 번호를 복사한다
+            2. find . -inum 번호 -exec rm -f {} \; , 오류면 폴더니까 삭제됐는 지 확인하고 삭제가 안 됐으면 -rf 로 해주면 된다
             - rm -rf abc , abc가 폴더면 그냥 하위까지 다 삭제됨
     5. cp : copy, 파일이나 폴더를 복사. 명령을 읽는 권한이 필요.
         - cd abc.txt cba.txt : abc.txt를 cba.txt라는 이름으로 복사
@@ -590,6 +593,9 @@
 # 사용자 변경
 - su 를사용 
     1. su - username , 현재 리눅스에 등록된 user의 이름을 적고 pw를 적으면 접속이 된다
+- docker 사용위한 사용자 GROUP 변경
+    1. docker ps 같은 걸 하면 permission denied 뜸, 
+    2. sudo usermod -a -G docker $USER 치고 재접속해서 id 치면 ___(docker) 가 나옴 
 # 관리자 변경
 - sudo -i 를 사용 , 어떤 유저상태에서도 이걸 사용하면 root로 변경됨
 # 루트접근불가

@@ -3,7 +3,11 @@
 [리눅스에서윈도우로파일전송방법](#linux_windowtransfering)
 
 [관리자자동접속법](#Administrator)
+
 [가상머신IP확인및ip설정](#vm-machine)
+
+[명령어더미실행하기](#명령어더미실행)
+
 [tmux사용법](#tmux)
 
 # Window_LinuxFileTransfering
@@ -80,7 +84,7 @@
             - 리눅스에서 adduser 된 상태의 user이름으로 접속한다 , 나는 Linux에서 adduser leekt 로 하고 pw 는 anna1234로 했다
             - login as leekt
             - pw anna1234
-        
+
 # tmux
 - tmux : terminal multiplexer, 여러개 터미널을 각각 독립적으로 사용할 수 있게 하는 유틸리티
     - 장점
@@ -102,3 +106,11 @@
         1. tmux 타입
         2. 하나의 새로운 윈도우를 가지는 새로운 세션을 만듦
         3. 
+
+
+
+# 명령어더미실행
+- 파일 하나 만들기 , e.g : nano docekrfile
+- 리눅스 명렁어를 복사 붙여넣기 하기
+- 저장후 나와서 파일을 실행 가능한 파일로 만들기 , chmod 777 _
+- ./dockerfile 처럼하면 실행 끝

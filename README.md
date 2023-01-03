@@ -1,3 +1,6 @@
+# 리눅스 첫 설치시 할 것
+1. sudo apt-get install : 이걸 해야지만 기본적인 리눅스 사용이 가능 (탭누르면 자동완성 등)
+
 [윈도우에서-리눅스로_파일전송방법](#window_linuxfiletransfering)
 
 [리눅스에서윈도우로파일전송방법](#linux_windowtransfering)

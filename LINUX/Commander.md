@@ -3,6 +3,7 @@
 # 2. commander - 필수 커맨더, 기본 커맨더, 사용자 커맨터 (root), 필수 주소(directory)지식, network 커맨더/파일
 # 3. skills, 유저정보확인, 비밀번호 복구(응급복구)
 [4. Network 지식](#4-network-지식--넷트워크-연결-오류-해결)
+
 [5. commander - 리눅스 제공 커맨더](#5-commander---리눅스-제공-커맨더)
 # 6. Server management and commander
 [사용자변경_그룹변경(docker)](#사용자-변경)
@@ -16,6 +17,8 @@
 [App설치시모든사용자가사용할수있게하기](#앱설치)
 
 [python라이브러리설치](#python)
+
+[docker설치](#docker설치)
 - 한글은  한글\ 게임\ 1.plplpl 처럼 \을 써줘야 인식하나봄. 근데 꼭 그런 것도 아닌가봄.
 - cd _: _은 경로, 경로를 이동한다
     - e.g
@@ -618,4 +621,7 @@
 - pip 설치
     - python3 을 치고 버전을 한 번 확인하고
     - apt-get install python3-pip 을 해서 설치 ㄱㄱ , python-pip 하면 2.~ 버전이 설치되니까 조심하셈
-    
+# docker설치
+- google에 ubuntu docker install
+- 들어가서 명령어 순서대로 README의 명렁어 더미 실행을 참고해서 모든 명령어를 file에 넣기
+- ./file 로 실행하면 ㅇㅋ

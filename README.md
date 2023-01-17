@@ -48,6 +48,10 @@
         + 윈도우 경로의 끝이 폴더라면 폴더 그 자체가 복사가 된다
         + 윈도우에서 보낼 파일의 이름이 kbs이고 window에 kbs라는 이름의 폴더가 " 있는 경로 " 에다가 해버리면 자동으로 덮어쓰기가 될까?
             -  YES , 된다
+        
+    3. error case
+        - window - > 
+            1. 포트번호 안 적음 , pscp -r windowpath ubuntupath , 다 정확한데 time out, 이 땐 pscp -P PORT 를 적기.
 
 # linux_windowtransfering
 

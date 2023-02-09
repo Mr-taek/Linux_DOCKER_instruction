@@ -91,8 +91,15 @@
             2. ls -a 로 .swap을 확인
             3. rm -f .new.txt.swp 로 삭제
             4. 정상 편집 가능.
-- mount : Hardware를 마음대로 이동시키기. Linux에선 물리적 장치(하드디스크파티션,CD,USB..)를 특정한 위치(보통 폴더)에 연결시키야 함, 이게 마운트.
+- mount : Hardware를 마음대로 이동시키기/hardware적용시키기. Linux에선 물리적 장치(하드디스크파티션,CD,USB..)를 특정한 위치(보통 폴더)에 연결시키야 함, 이게 마운트.
     - CD/DVD MOUNT
+
+    - 사전지식
+        1. 특정 하드웨어는 /dev/sdf 처럼 특정 경로에 존재한다
+        2. 이 경로 가 바로 하드웨어가 있는곳이다
+    
+    - hardward mount
+        - sudo mount /dev/sdf /mnt  : /은 바로 모든 경로의 시작이라고 보면된다 , mnt라는 폴더, 경로에 하드웨어 저장소로 만들겠다는 것임. mnt가 없으면 자동 생성
 
 
 - pipe , filter, redirection
@@ -206,6 +213,7 @@
 
 - 기본 커맨더
     1. ls : 커맨더가 위친 directory의 파일의 목록을 나열
+        - ls -l | wc -l : 폴더 내 파일 개수확인, -l로 모든 파일 나열하고 wc -l로 count
         - ls -a : 현재 경로의 숨겨진 파일을 포함해 모두 나열
         - ls /etc/systemd : systemd에 있는 파일 나열
         - ls -a /etc/systemd : systmed에 있는 . 의 숨겨진 파일 모두 나열

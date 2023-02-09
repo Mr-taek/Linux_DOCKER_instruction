@@ -52,7 +52,8 @@
     3. error case
         - window - > 
             1. 포트번호 안 적음 , pscp -r windowpath ubuntupath , 다 정확한데 time out, 이 땐 pscp -P PORT 를 적기.
-
+    4. ANNA , NIPA 전송
+        - pscp -P 8081 -r C:\Usera~ ubuntu@14.49.44.206:/home/ubuntu
 # linux_windowtransfering
 
 - On window cmd , (p)scp -P 16022 -r ubuntu@14.49.44.206:/home/ubuntu/VR_SICK_made_leekt/vr_sickness\Park_vr_sickness_predictor C:\Users\leekt\Desktop

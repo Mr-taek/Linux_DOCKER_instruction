@@ -19,6 +19,9 @@
 [python라이브러리설치](#python)
 
 [docker설치](#docker설치)
+
+
+[hardware설치](#hardware설치)
 - 한글은  한글\ 게임\ 1.plplpl 처럼 \을 써줘야 인식하나봄. 근데 꼭 그런 것도 아닌가봄.
 - cd _: _은 경로, 경로를 이동한다
     - e.g
@@ -91,16 +94,26 @@
             2. ls -a 로 .swap을 확인
             3. rm -f .new.txt.swp 로 삭제
             4. 정상 편집 가능.
-- mount : Hardware를 마음대로 이동시키기/hardware적용시키기. Linux에선 물리적 장치(하드디스크파티션,CD,USB..)를 특정한 위치(보통 폴더)에 연결시키야 함, 이게 마운트.
-    - CD/DVD MOUNT
 
-    - 사전지식
-        1. 특정 하드웨어는 /dev/sdf 처럼 특정 경로에 존재한다
-        2. 이 경로 가 바로 하드웨어가 있는곳이다
-    
-    - hardward mount
-        - sudo mount /dev/sdf /mnt  : /은 바로 모든 경로의 시작이라고 보면된다 , mnt라는 폴더, 경로에 하드웨어 저장소로 만들겠다는 것임. mnt가 없으면 자동 생성
+# hardware설치
+- mount / umount
+    - 장착된 하드웨어(hardware) 확인 법
+        - df -h
 
+    1. mkfs : 장착한 하드웨어를 format시키기
+    - mount : Hardware를 마음대로 이동시키기/hardware적용시키기. Linux에선 물리적 장치(하드디스크파티션,CD,USB..)를 특정한 위치(보통 폴더)에 연결시키야 함, 이게 마운트.
+        - CD/DVD MOUNT
+
+        - 사전지식
+            1. 특정 하드웨어는 /dev/sdf 처럼 특정 경로에 존재한다
+            2. 이 경로 가 바로 하드웨어가 있는곳이다
+            3. ls /dev/sdf -al 로 하면 파일의 상태가 나오는데, -> 의 오른쪽이 실제 장치명이다. 따라서 /dev/sdf 로 simbol되었고 /dev/장치명 으로 해도 된다
+        
+        - hardward mount
+            - sudo mount /dev/sdf /mnt  : /은 바로 모든 경로의 시작이라고 보면된다 , mnt라는 폴더, 경로에 하드웨어 저장소로 만들겠다는 것임. mnt가 없으면 자동 생성
+            - /mnt 폴더에 가면 무언가 생겨있다
+    - umount : hardware 떄버리기
+        - sudo umount /mnt : mount를 통해 hardward가 /mnt경로로 설정되었고 이것을 때버리기 
 
 - pipe , filter, redirection
     1. pipe : |

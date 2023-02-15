@@ -16,6 +16,11 @@
     1. image : Base file , 컨테이너 생성하기 위한
         - 기억할 내용
             1. 이미지의 이름형식 : _이미지가저장된장소이름_(옵션,지정되지않으면DOCKER-HUB의공식이미지를의미)/_이미지이름_(필수,저장소에서IMAGE이름에맞는것을찾음):_TAG_(이미지의Tag에맞는것을찾음. 보통 버전을 의미, 명시되지 않으면 latest로 지정)
+            - e.g  : docker run -i -t ubuntu:18.04 , 만약 우분투의 18.04 버전이 local에 없으면 자동으로 docker 홈페이지 docker hub서 다운받으러 감
+                - local에 없는경우 나오는 Text
+                    ```
+                    Unalble to find image "ubuntu:18.02" locally
+                    ```
     2. container : image에서 복사한 것
         - 기억할 내용
             1. 이미지에서 변경된 사항만 저장. 컨테이너에서 조작한 것은 이미지에 무관
@@ -41,13 +46,14 @@
                 3. docker start _컨테이너 name_ : 컨테이너 작동시작
                 4. docker attach _컨테이너 name_ : -i -t 옵션이 들어갔을 때 자동으로 컨테이너에 들어가게 됨
         2. docker create -i -t --name _컨테이너이름_ _image정보_ : image정보에 맞는 컨테이너를 생성한다, 마찬가지로 저장소 없다면 docker hub에서 내려 받는다
-            - "--name _컨테이너이름_ " : 컨테이너의 이름을 지정한다, 만약 지정하지 않으면 컨테이너 이름이 자동으로 생성되버린다\
+            - "--name _컨테이너이름_ " : 컨테이너의 이름을 지정한다, 만약 지정하지 않으면 컨테이너 이름이 자동으로 생성돼버린다
             - mechanism
                 1. docker pull
                 2. docker create
     ### 컨테이너 들어|나가기
         - 들어가기
             1. docker start _컨테이너이름_ 또는 Container ID 2~3글자(docker ps -a 을 통해 찾기)
+                - Container ID 찾기 : docker inspect 
             2. docker attach _컨테이너 이름_ 또는 Container ID 2~3글자(docker ps -a 을 통해 찾기)
         - 나가기
             1. 동시에 컨테이너 정지시키기
@@ -68,7 +74,18 @@
                 2. IMAGE : 컨테이너가 가져온 IMAGE 이름
                 3. COMMAND : 컨테이너가 시작될 때 실행할 명령어. 대부분 이미지에 미리 내장되어 있음.
                 4. NAMES : 컨테이너 고유 이름, 생성시 --name 옵션으로 지정하지 않으면 엔진이 무작위로 생성. 변경을 위해선 docker rename _컨테이너이름_ _바꿀이름_ 으로 변경해야함
-            
+            5. 컨테이너 정보 해석
+                ```
+                CONTAINER ID    IMAGE   COMMAND     CREATED     STATUS      PORTS       NAMES
+                ```
+                - CONTAINER ID : 컨테이너에게 자동으로할당 되는 고유 ID.    
+                - IMAGE : 컨테이너에 시용된 이미지
+                - COMMAND : IMAGE 에 내장된 COMMAND. 컨테이너가 시작될 때 실행시킬 CMD를 설정. /bin/bash 가 실행되어야만 입출력이 가능한 shell 사용가능.
+                    - docker run -i -t ubuntu:18.04 echo hello world : image 안에 /bin/bash cmd를 echo hello world 바꿔버림(덮어씌우기). 즉 컨테이너를 생성하는데 이 컨테이너는 shell접근을 하지 않아서 hello world 만 echo 하고 끝나버리는 무용지물 컨테이너가 완성됨
+                - CREATED : 컨테이너 생성후 지난 시간
+                - STATUS : UP/PAUSE/Exited , 실행중/중지된/종료된
+                - PORTS : 컨테이너에 접근 가능한 PORTS 번호와 해당 번호를 연결한 HOST의 포트번호 (결론 : HOST의 특정 PORT 번호로 진입하면 컨테이너에 접근 가능). 빈칸은 아무것도 설정되지 않음
+                - NAMES : 컨테이너 생성때 주어지면 주어진 이름으로 , 없으면 DOCKER에서 자동으로 컨테이너 이름을 생성
         - 컨테이너 이름 변경
             - docker rename _컨테이너이름_ _바꿀이름_
     ### 컨테이너삭제

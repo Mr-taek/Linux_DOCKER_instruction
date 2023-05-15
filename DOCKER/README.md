@@ -2,6 +2,8 @@
 
 [Docker의 용도](#What-is-docker)
 
+[Docker 설치](#Install)
+
 [Docker My Account](#개인정보)
 
 [Docker Engine, Docker의 기본이자 모든 것](#Docker-engine)
@@ -24,6 +26,11 @@
     3. 컨테이너에 어떤 소프트웨어를 설치하고 설정 파일을 수정해도 호스트 os에는 영향이 안 감.
     4. 컨테이너에서 작업을 마치고 실질적인 운영환경에 배포할 때 컨테이너를 docker image를 로 만들어서 서버에 전달하면 됨.
 
+# Install
+- install website : https://docs.docker.com/engine/install/ubuntu/
+- steps
+    1. 위 웹사이트에서 차근 차근 따라가면됨
+    2. 본인은 Ubuntu 20.04(LTS)를 사용했음
 
 # Docker engine
 - 사용 툴

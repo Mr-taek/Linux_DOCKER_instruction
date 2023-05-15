@@ -1,5 +1,11 @@
 import sys,os
 
-print("python execution : ",sys.executable)
-print("current path : ",os.getcwd())
-print("os list : ",os.listdir(os.path.join(os.getcwd(),"PECNett")))
+class kbs:
+    def __init__(self) -> None:
+        self.a=12
+    def __str__(self) -> str:
+       return "fasd"
+
+
+c=kbs()
+print(c)

@@ -1,11 +1,28 @@
 # 최초 설치후 docker permission denied 가 뜨면, /var/run/docker.sock 의 파일 소유자 확인하자
+
+[Docker의 용도](#What-is-docker)
+
 [Docker My Account](#개인정보)
 
-
-[Docker Engine](#Docker-engine)
+[Docker Engine, Docker의 기본이자 모든 것](#Docker-engine)
 
 [Docker compose](#도커-컴포즈)
 
+
+# What is docker
+- Go 언어로 개발된 '여러 개발환경'을 성능 손실 없이 줄이기 위한 툴
+ - 한 호스트 아래 여러 개의 운영체제는 가상머신 단위로 불리며, 우분투/CentOs 등이 존재함
+ - 'Hypervisor', 호스트와 가상머신간 소통하기 위한 중간 단계. Hypervisor에의해 생성/관리되는 것을 Guest 운영체제라 함
+ - 여러 Guest os는 다른 게스트 os와 완전히 독립된 공간과 시스템 자원을 할당받음 (Vmware)
+ - 가상머신은 또 guest os를 사용하기 위한 라이브러리, 커널 등을 전부 포함해서 크기가 큼. 다만, 완벽한 운영체제를 생성할 수 있다는 장점이 있고 성능손실이 있음
+- Docker는 '프로세스 단위'의 환경을 만듦. 필요한 커널은 호스트의 커널을 사용하고 사용하는 애플리케이션의 라이브러리 및 실행 파일만이 존재함. 즉 크기가 작아짐
+ - 이는 배포시간이 가상머신에 비해 빠르고 가상화된 공간에서의 성능 손실도 거의 없음
+
+- Docker는 어떻게 쓰나
+    1. 호스트os는 일반적으로 서버를 부팅할때 실행되는 운영체제를 의미하며
+    2. docker의 컨테이너, 즉 docker의 가상 머신은 호스트 os 바로 다음 단계에 실행이 됨
+    3. 컨테이너에 어떤 소프트웨어를 설치하고 설정 파일을 수정해도 호스트 os에는 영향이 안 감.
+    4. 컨테이너에서 작업을 마치고 실질적인 운영환경에 배포할 때 컨테이너를 docker image를 로 만들어서 서버에 전달하면 됨.
 
 
 # Docker engine

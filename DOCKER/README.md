@@ -34,7 +34,7 @@
 
 # Docker engine
 - 사용 툴
-    1. CLI : 도커가 기본적으로 제공하는 도커 엔진 접근 툴
+    1. CLI : command line interface, 도커가 기본적으로 제공하는 도커 엔진 접근 툴
     2. Kitematic : 도커사용을 위한 GUI TOOL
 - 구성단위
     1. image : Base file , 컨테이너 생성하기 위한

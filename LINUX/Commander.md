@@ -1,6 +1,7 @@
-# 1. 우분투 사용 필수 Skills / 지식들 pipe , filter, redirection, 프로세스, 데몬, 서비스,  (systemd)서비스/소켓
-
-# 2. commander - 필수 커맨더, 기본 커맨더, 사용자 커맨터 (root), 필수 주소(directory)지식, network 커맨더/파일
+[1. 우분투 사용 필수 skiils](#1.우분투-사용-필수-Skills-/-지식들)
+[1.1 파일거르기, ](#pipe_filter_redirection)
+[1.2 프로세스,데몬,서비스 란?](#프로세스,데몬,서비스-란?)
+[# 2.commander - 필수 커맨더, 기본 커맨더, 사용자 커맨터](#2.commander:-필수-커맨더,-기본 커맨더,-사용자 커맨터)
 # 3. skills, 유저정보확인, 비밀번호 복구(응급복구)
 [4. Network 지식](#4-network-지식--넷트워크-연결-오류-해결)
 
@@ -56,6 +57,7 @@
 
 
 # 1.우분투 사용 필수 Skills / 지식들
+프로세스, 데몬, 서비스,  (systemd)서비스/소켓
 + Dos key : 이전에 입력했던 것을 위/아래 화살을 사용해 가져오기.
 
 - X window : GNOME,KDE 등이 우분투에 사용된 GUI
@@ -116,6 +118,7 @@
     - umount : hardware 떄버리기
         - sudo umount /mnt : mount를 통해 hardward가 /mnt경로로 설정되었고 이것을 때버리기 
 
+# pipe_filter_redirection
 - pipe , filter, redirection
     1. pipe : |
     2. filter : 필효한 것만 걸러주는 명렁어
@@ -130,6 +133,7 @@
         - ls -l >> list.txt : 기존 내용에 이어서 쓴다
         - sort < list.txt : list.txt 를 sort 해서 화면에 출력
         - sort < list.txt >out.txt : list.txt정렬해서 out.txt에 덮어씌우기.
+# 프로세스,데몬,서비스 란?
 - 프로세스, 데몬, 서비스 
     1. process
         - cmd
@@ -163,7 +167,7 @@
 
 
 
-# 2.commander - 필수 커맨더, 기본 커맨더, 사용자 커맨터
+# 2.commander: 필수 커맨더, 기본 커맨더, 사용자 커맨터
 - 필수 커맨더(서버구축) 필수 commander
     - unix/linux 에선 소문자 대문자를 명확히 구분한다.
 

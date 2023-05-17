@@ -53,9 +53,11 @@
 - 사용법
     [이미지생성](#이미지-생성)
     [컨테이너생성](#컨테이너-생성)
+    [컨테이너 외부 상호작용 허용하기](#컨테이너 외부노출)
     [컨테이너나가기](#컨테이너-들어|나가기)
     [컨테이너정보확인하기](#컨테이너정보)
     [컨테이너삭제하기](#컨테이너삭제)
+    [명령어들](#명령어)
     ### 이미지 생성
         1. docker pull _image정보_ : 이미지를 내려받기
     ### 컨테이너 생성
@@ -74,6 +76,8 @@
             - mechanism
                 1. docker pull
                 2. docker create
+    ### 컨테이너 외부노출
+        
     ### 컨테이너 들어|나가기
         - 들어가기
             1. docker start _컨테이너이름_ 또는 Container ID 2~3글자(docker ps -a 을 통해 찾기)
@@ -114,12 +118,17 @@
             - docker rename _컨테이너이름_ _바꿀이름_
     ### 컨테이너삭제
         - 주의
-            1. 반드시 컨테이너는 stop된 상태여야 한다
-        
+            1. 반드시 컨테이너는 stop된 상태여야 한다 , docker stop _container_ 로 실행한다.
+            2. 실행중인 컨테이너 삭제법
+             - docker rm -f _컨테이너 이름_
         - 모든 컨테이너 제거하기
             - docker rm $(docker ps -aq) : 책에선 -a -q, docker ps -a -q 는 모든 컨테이너의 id를 출력시킴. 여기에 해당되는 컨테이너들을 다 삭제
+            - docker container prune : 연습용으로 만든 컨테이너가 너무 많을 때 다 삭제.
         - 단일 삭제
             - docker rm _컨테이너 이름_
+    ### 명령어
+     1. docker stop _container_ : 컨테이너의 작동을 중지시킴
+      - 모든 컨테이너 작동 중지 : dockor stop $(docker ps -a -q)
 # 도커 컴포즈
 - 용도
     1. 여러 container와 정의할 option command가 많을 때 사용

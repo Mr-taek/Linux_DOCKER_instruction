@@ -635,12 +635,12 @@
 # 루트접근불가
 - step
     1. root권한이 있는 ID로 이동한다
-        - su name
+        - su name or su -l (it's directly change user to sudo)
         - pass -> name의 비번
     2. sudo -i 로 root에 접근한다
     3. nano /etc/sudoers로 들어간다
         - sudoers 에 계정이름이 들어가야 root권한이 생긴다
-    4. 맨 아래에 보면 USERNAME ALL=(ALL:ALL) ALL 이 있는데 USERNAME에 SUDO권한을 주고 싶은 유저를 입력하고 저장하면 된다
+    4. 맨 아래에 보면 section of "User privilege specification", root ALL=(ALL:ALL) ALL 이 있는데 USERNAME에 SUDO권한을 주고 싶은 유저(leekt)를 입력하고 저장하면 된다
 # 비밀번호변경
 - root
     - 다른 사용자에서 

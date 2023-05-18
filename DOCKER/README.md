@@ -31,7 +31,7 @@
 - steps
     1. 위 웹사이트에서 차근 차근 따라가면됨
     2. 본인은 Ubuntu 20.04(LTS)를 사용했음
-
+    3. give perbission to use docker for a user , sudo usermod -a -G docker $USER
 # Docker engine
 - 사용 툴
     1. CLI : command line interface, 도커가 기본적으로 제공하는 도커 엔진 접근 툴

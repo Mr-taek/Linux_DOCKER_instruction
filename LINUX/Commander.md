@@ -608,10 +608,11 @@
             - groupadd --gid 1997 telnetork
             - adduser --gid 1997 teluser
         8. systemctl status xinetd , 액티브상태가 active(running)임을 확인.
-        9. systemctl restart xinetd
-        10. systemctl status xinetd, 액티브는 그대로인데 아래 빨간 줄이 나온 것이 확인된다.
-        11. ufw allow 23/tcp, 방화벽에서 텔넷에게 23번 포트를 허용. 포트는 넷트워크 용어 확인
-        12. 
+        9. systemctl stop xinetd , inactive
+        10. systemctl restart xinetd
+        11. systemctl status xinetd, 액티브는 그대로인데 아래 빨간 줄이 나온 것이 확인된다.
+        12. ufw allow 23/tcp, 방화벽에서 텔넷에게 23번 포트를 허용. 포트는 넷트워크 용어 확인
+        13. 
 - OpenSSH server : 리눅스에서 지원하는 서버, TELNET의 취약점이 보완된 서버이다. 보안강화된 TELNET 서버도 있으나 실무에선 SSH서버를 많이 사용한다.
     - 설치과정 : #4를 참고
         1. system restart ssh

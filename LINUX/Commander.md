@@ -26,7 +26,6 @@
 
 [docker설치](#docker설치)
 
-
 [hardware설치](#hardware설치)
 
 - 한글은  한글\ 게임\ 1.plplpl 처럼 \을 써줘야 인식하나봄. 근데 꼭 그런 것도 아닌가봄.
@@ -102,7 +101,10 @@
             2. ls -a 로 .swap을 확인
             3. rm -f .new.txt.swp 로 삭제
             4. 정상 편집 가능.
-
+- stress
+    - stress : CPU와 메모리에 과부하를 줘서 성능을 테스트할 때 사용됨.
+    - docker 같은 경우에서 특히 사용될 수 있음
+    - 자세한 것은 구글링
 # hardware설치
 - mount / umount
     - 장착된 하드웨어(hardware) 확인 법

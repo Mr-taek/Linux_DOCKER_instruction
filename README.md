@@ -21,7 +21,7 @@
         2. (sudo) apt install openssh-server
         3. (설치완료시)
             - (sudo) service ssh status
-            - Active 에서 active(running을 쳌)
+            - status 옵션에서 "Active": inactive (dead)인지 (녹색글)active (running) 으로 써져 있는 지 체크.
             - (만약 running이 아니면) (sudo) service ssh start
         4. (Option) 매번 시작할 때 작동시키고 싶다면 
             - (sudo) service ssh enable
@@ -52,6 +52,12 @@
     3. error case
         - window - > 
             1. 포트번호 안 적음 , pscp -r windowpath ubuntupath , 다 정확한데 time out, 이 땐 pscp -P PORT 를 적기.
+        - AWS EC2 전송 에러
+            1. 우분투의 주소는 EC2의 DNS를 가져와야 한다. DNS는 INSTANCES에서 Networking의 public IPv4 DNS를 가져오면 된다.
+                - 예 - error, IP주소만 적으면 에러가 난다[Timeout Error]: pscp -i C:\~\wordPresskey.ppk C:\wordfile.txt ubuntu@54.180.157.33:/home~
+                - 예 - OK : pscp -i wordPressKey.ppk wordpress-6.6.1.tar.gz ubuntu@ec2-54-180-157-133.ap-northeast-2.compute.amazonaws.com:
+            2. 파일 전송 에러 , pscp: unable to open /home/wordpress-6.6.1.tar.gz: permission denied - /home 경로는 권한설정상 파일전송되어 파일이 저장되지 못한다
+    - 
     4. ANNA , NIPA 전송
         - pscp -P 8081 -r C:\Usera~ ubuntu@14.49.44.206:/home/ubuntu
 # linux_windowtransfering

@@ -656,6 +656,7 @@
     - python3 을 치고 버전을 한 번 확인하고
     - apt-get install python3-pip 을 해서 설치 ㄱㄱ , python-pip 하면 2.~ 버전이 설치되니까 조심하셈
 # docker설치
+
 - google에 ubuntu docker install
 - 들어가서 명령어 순서대로 README의 명렁어 더미 실행을 참고해서 모든 명령어를 file에 넣기
 - ./file 로 실행하면 ㅇㅋ

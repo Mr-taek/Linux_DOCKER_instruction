@@ -51,11 +51,14 @@
     4. 컨테이너에서 작업을 마치고 실질적인 운영환경에 배포할 때 컨테이너를 docker image를 로 만들어서 서버에 전달하면 됨.
 
 # Install
-- install website : https://docs.docker.com/engine/install/ubuntu/
-- steps
-    1. 위 웹사이트에서 차근 차근 따라가면됨
-    2. 본인은 Ubuntu 20.04(LTS)를 사용했음
-    3. give perbission to use docker for a user , sudo usermod -a -G docker $USER
+1. GUI가 없는 UBUNTU 썰치
+    - install website : https://docs.docker.com/engine/install/ubuntu/
+    - steps
+        1. 위 웹사이트에서 1부터 아래까지 차근 차근 따라가면됨
+        2. 본인은 Ubuntu 20.04(LTS)를 사용했음
+        3. give perbission to use docker for a user , sudo usermod -a -G docker $USER
+2. GUI까 잇는 UBUNTU
+    - https://docs.docker.com/desktop/setup/install/linux/
 # Docker engine
 - 사용 툴
     1. CLI : command line interface, 도커가 기본적으로 제공하는 도커 엔진 접근 툴

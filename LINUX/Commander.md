@@ -44,7 +44,13 @@
 - dpkg : dpkg -l ,s 설치된 패키지를 체크하는 것.
 - rm : rm -rf root->삭제시 루트파티션삭제로 리눅스재설치, 삭제 커맨더.
 - wget : url에 접속해서 파일이 있으면 다운 받음.
-
+    - curl과의 차이
+        1. recursive하게 모두 다운로드. 즉 해당 페이지에 있는 모든 내용을 깊이 있게 다 가져옴
+        2. curl 보다 더 오래됨
+        3. 별 옶연 없으면 wget을 사용하는게 좀 더 빠름
+- curl : wget과 같이 웹 서버로부터 컨테츠를 가져옴. 
+    - wget 보다 좀 더 복잡한 컨텐츠 다운로드시 사용
+    
 - ls : ls sources.list, 있으면 있다 없으면 없다..
 
 - apt : apt update, apt install,
